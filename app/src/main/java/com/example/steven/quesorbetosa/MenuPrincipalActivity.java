@@ -13,7 +13,6 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
     Button BTN_Productos;
      Button BTN_Facturacion;
 
-
     @Override
     public void onClick(View v){
 
