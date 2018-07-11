@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ClienteActivity">
 
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/BTN_Registrar_Cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Cliente" />
+
+        <Button
+            android:id="@+id/BTN_Consultar_Clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultar Clientes" />
+
+        <Button
+            android:id="@+id/BTN_Actualizar_Clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar_Clientes" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
