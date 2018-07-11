@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(TXT_Email.getText().toString().equals("a") && TXT_Contrasena.getText().toString().equals("a")){
+        if(TXT_Email.getText().toString().equals("admin") && TXT_Contrasena.getText().toString().equals("admin")){
 
             Intent elIntent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
             startActivity(elIntent);
