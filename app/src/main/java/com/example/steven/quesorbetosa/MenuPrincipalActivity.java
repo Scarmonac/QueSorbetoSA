@@ -27,7 +27,7 @@ public class MenuPrincipalActivity extends AppCompatActivity implements View.OnC
                 startActivity(elIntent2);
                 break;
             case R.id.BTN_Facturacion:
-                Intent elIntent3= new Intent(getApplicationContext(),ProductoActivity.class);
+                Intent elIntent3= new Intent(getApplicationContext(),FacturacionActivity.class);
                 startActivity(elIntent3);
                 break;
         }
