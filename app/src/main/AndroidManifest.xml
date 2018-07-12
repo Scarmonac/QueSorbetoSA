@@ -20,11 +20,9 @@
         <activity android:name=".ClienteActivity" />
         <activity android:name=".ProductoActivity" />
         <activity android:name=".FacturacionActivity" />
-        <activity android:name=".RegistroClientes"></activity>
-        <activity android:name=".ActualizarClientes"></activity>
-        <activity android:name=".ConsultarClientes"></activity>
-
+        <activity android:name=".RegistroClientes" />
+        <activity android:name=".ActualizarClientes" />
+        <activity android:name=".ConsultarClientes" />
     </application>
 
 </manifest>
-
