@@ -17,12 +17,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(TXT_Email.getText().toString().equals("admin") && TXT_Contrasena.getText().toString().equals("admin")){
+
+        if (validarLogin(TXT_Email.getText().toString(),
+                TXT_Contrasena.getText().toString())){
 
             Intent elIntent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
             startActivity(elIntent);
+
         }else
-            Toast.makeText(getApplicationContext(),"Contraseña incorrecta",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Usuario y/o contraseña no válido",Toast.LENGTH_LONG).show();
 
     }
 
@@ -37,7 +40,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TXT_Contrasena=(EditText)findViewById(R.id.TXT_Contrasena);
 
         BTN_Login.setOnClickListener(this);
+    }
 
+    private boolean validarLogin(String usuario, String password){
+
+        //todo validar que existe el usuario y contraseña
+
+        return true;
     }
 
 }

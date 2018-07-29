@@ -38,7 +38,9 @@ public class ClienteActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente);
 
+
         inicializaPantalla();
+
 
     }
 
@@ -47,6 +49,7 @@ public class ClienteActivity extends AppCompatActivity implements View.OnClickLi
         BTN_Registrar_Cliente=(Button) findViewById(R.id.BTN_Registrar_Cliente);
         BTN_Consultar_Clientes=(Button) findViewById(R.id.BTN_Consultar_Clientes);
         BTN_Actualizar_Clientes=(Button) findViewById(R.id.BTN_Actualizar_Clientes);
+
 
         BTN_Registrar_Cliente.setOnClickListener(this);
         BTN_Consultar_Clientes.setOnClickListener(this);

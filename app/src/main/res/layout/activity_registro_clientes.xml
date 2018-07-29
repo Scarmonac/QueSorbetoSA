@@ -14,32 +14,38 @@
         tools:layout_editor_absoluteY="8dp"
         tools:ignore="MissingConstraints">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro de Clientes"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
         <EditText
-            android:id="@+id/TXT_RegistroClientes"
+            android:id="@+id/TXT_Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Registro Clientes" />
-
-        <TextView
-            android:id="@+id/TXT_Nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:hint="Nombre" />
 
-        <TextView
+        <EditText
             android:id="@+id/TXT_Telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Numero de telefono" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Telefono" />
 
         <Button
             android:id="@+id/BTN_RegistrarCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Registar Cliente" />
+            android:onClick="onClick"
+            android:text="Registar Cliente"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

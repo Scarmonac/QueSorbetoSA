@@ -17,8 +17,10 @@
             android:id="@+id/TXT_InicioDeSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inicio de Sesion"
-            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="Iniciar Sesión"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            android:textSize="25sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <EditText
@@ -43,6 +45,8 @@
             android:id="@+id/BTN_Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Iniciar"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
