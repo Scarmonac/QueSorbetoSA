@@ -22,20 +22,15 @@
         <Button
             android:id="@+id/BTN_Registrar_Producto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="151dp"
             android:text="Registrar producto" />
 
         <Button
             android:id="@+id/BTN_Consulta_Productos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="162dp"
             android:text="Consulta productos" />
 
-        <Button
-            android:id="@+id/BTN_Actualizacion_Productos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Actualizacion productos" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

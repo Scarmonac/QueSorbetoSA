@@ -10,7 +10,7 @@ public class ProductoActivity extends AppCompatActivity implements View.OnClickL
 
     Button BTN_Registrar_Producto;
     Button BTN_Consulta_Productos;
-    Button BTN_Actualizacion_Productos;
+
 
     @Override
     public void onClick(View v) {
@@ -25,10 +25,7 @@ public class ProductoActivity extends AppCompatActivity implements View.OnClickL
                 elIntent = new Intent(getApplicationContext(), ConsultarProductos.class);
 
                 break;
-            case R.id.BTN_Actualizacion_Productos:
-                elIntent = new Intent(getApplicationContext(), ActualizarProductos.class);
 
-                break;
         }
         startActivity(elIntent);
 
@@ -46,12 +43,12 @@ public class ProductoActivity extends AppCompatActivity implements View.OnClickL
 
         BTN_Registrar_Producto=(Button) findViewById(R.id.BTN_Registrar_Producto);
         BTN_Consulta_Productos=(Button) findViewById(R.id.BTN_Consulta_Productos);
-        BTN_Actualizacion_Productos=(Button) findViewById(R.id.BTN_Actualizacion_Productos);
+
 
 
         BTN_Registrar_Producto.setOnClickListener(this);
         BTN_Consulta_Productos.setOnClickListener(this);
-        BTN_Actualizacion_Productos.setOnClickListener(this);
+
 
     }
 

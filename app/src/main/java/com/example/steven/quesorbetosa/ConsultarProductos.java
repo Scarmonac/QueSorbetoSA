@@ -39,14 +39,6 @@ public class ConsultarProductos extends AppCompatActivity {
         });
     }
 
-
-
-
-
-
-
-
-
     private void eliminarProducto() {
         SQLiteDatabase db=conn.getWritableDatabase();
         String[] parametros={campoId.getText().toString()};

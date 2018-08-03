@@ -9,7 +9,7 @@ import android.widget.Button;
 public class ClienteActivity extends AppCompatActivity implements View.OnClickListener{
     Button BTN_Registrar_Cliente;
     Button BTN_Consultar_Clientes;
-    Button BTN_Actualizar_Clientes;
+
 
     @Override
     public void onClick(View v) {
@@ -22,10 +22,6 @@ public class ClienteActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.BTN_Consultar_Clientes:
                  elIntent = new Intent(getApplicationContext(), ConsultarClientes.class);
-
-                break;
-            case R.id.BTN_Actualizar_Clientes:
-                 elIntent = new Intent(getApplicationContext(), ActualizarClientes.class);
 
                 break;
         }
@@ -48,12 +44,12 @@ public class ClienteActivity extends AppCompatActivity implements View.OnClickLi
 
         BTN_Registrar_Cliente=(Button) findViewById(R.id.BTN_Registrar_Cliente);
         BTN_Consultar_Clientes=(Button) findViewById(R.id.BTN_Consultar_Clientes);
-        BTN_Actualizar_Clientes=(Button) findViewById(R.id.BTN_Actualizar_Clientes);
+
 
 
         BTN_Registrar_Cliente.setOnClickListener(this);
         BTN_Consultar_Clientes.setOnClickListener(this);
-        BTN_Actualizar_Clientes.setOnClickListener(this);
+
 
     }
 
