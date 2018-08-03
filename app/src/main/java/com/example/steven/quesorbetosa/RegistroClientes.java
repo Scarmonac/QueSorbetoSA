@@ -39,32 +39,9 @@ public class RegistroClientes extends AppCompatActivity {
         });
 
     }
-//    public void onClick(View view) {
-        //registrarUsuarios();
-        //registrarUsuariosSql();
-    //}
-/*
-    private void registrarUsuariosSql() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"bd_Clientes",null,1);
-
-        SQLiteDatabase db=conn.getWritableDatabase();
-
-        //insert into Cliente (nombre,telefono) values ('Steven','89205444')
-
-        String insert="INSERT INTO "+ Utilidades.TABLA_CLIENTE
-                +" ( " +","+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_TELEFONO+")" +
-                " VALUES ("+", '"+campoNombre.getText().toString()+"','"
-                +campoTelefono.getText().toString()+"')";
-
-        db.execSQL(insert);
-
-
-        db.close();
-    }
-*/
 
     private void registrarUsuarios() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,1);
+        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,4);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 

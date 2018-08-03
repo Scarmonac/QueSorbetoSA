@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsultarClientes">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/txtConsultarClientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultar Clientes"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TXTidUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Ingrese id del usuario" />
+
+        <EditText
+            android:id="@+id/TXTnombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:hint="Nombre del usuario"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/TXTtelefonoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:ems="10"
+            android:hint="Telefóno del usuario"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/BTN_Consultar_Clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consultar Clientes" />
+
+        <Button
+            android:id="@+id/BTN_Actualizar_Clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Clientes" />
+
+        <Button
+            android:id="@+id/BTN_Eliminar_Clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Clientes" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

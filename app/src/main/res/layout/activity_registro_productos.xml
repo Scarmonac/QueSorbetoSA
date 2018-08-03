@@ -4,38 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductoActivity">
+    tools:context=".RegistroProductos">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PRODUCTOS"
+            android:text="Registro Productos"
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/BTN_Registrar_Producto"
+        <EditText
+            android:id="@+id/TXT_Nombre_Producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar producto" />
+            android:ems="10"
+            android:hint="Nombre producto"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/TXT_Precio_Venta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Precio Venta"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/BTN_Consulta_Productos"
+            android:id="@+id/BTN_Registrar_Productos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Consulta productos" />
+            android:text="Registrar prducto" />
 
-        <Button
-            android:id="@+id/BTN_Actualizacion_Productos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Actualizacion productos" />
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

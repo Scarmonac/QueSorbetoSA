@@ -23,6 +23,9 @@
         <activity android:name=".RegistroClientes" />
         <activity android:name=".ActualizarClientes" />
         <activity android:name=".ConsultarClientes" />
+        <activity android:name=".RegistroProductos" />
+        <activity android:name=".ConsultarProductos" />
+        <activity android:name=".ActualizarProductos"></activity>
     </application>
 
 </manifest>

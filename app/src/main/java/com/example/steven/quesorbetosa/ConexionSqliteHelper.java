@@ -17,20 +17,16 @@ public class ConexionSqliteHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(Utilidades.CREAR_TABLA_CLIENTE);
+        db.execSQL(Utilidades.CREAR_TABLA_PRODUCTO);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+Utilidades.TABLA_CLIENTE);
+        db.execSQL("DROP TABLE IF EXISTS "+Utilidades.TABLA_PRODUCTO);
+
+        onCreate(db);
     }
-
-    //public void AbrirDB(){
-        //this.getWritableDatabase();
-    //}
-
-    //public void CerrarDB(){
-        //this.close();
-    //}
 
     public void InsertarRegistros(String nombre, int telefono  ){
 
@@ -39,5 +35,13 @@ public class ConexionSqliteHelper extends SQLiteOpenHelper{
         valores.put("Telefono", telefono);
 
         this.getWritableDatabase().insert("Clientes", null,valores);
+    }
+    public void InsertarRegistrosProducto(String nombre, int Precio_Venta  ){
+
+        ContentValues valores= new ContentValues();
+        valores.put("Nombre",nombre );
+        valores.put("Precio Venta", Precio_Venta);
+
+        this.getWritableDatabase().insert("Productos", null,valores);
     }
 }

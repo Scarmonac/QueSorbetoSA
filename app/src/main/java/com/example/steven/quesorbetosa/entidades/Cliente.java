@@ -4,22 +4,22 @@ public class Cliente {
 
 
 
-    private Integer id;
+    private Integer idd;
     private Integer nombre;
     private Integer telefono;
 
     public Cliente(Integer id, Integer nombre, Integer telefono) {
-        this.id = id;
+        this.idd = idd;
         this.nombre = nombre;
         this.telefono = telefono;
     }
 
     public Integer getId() {
-        return id;
+        return idd;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idd = id;
     }
 
     public Integer getNombre() {
