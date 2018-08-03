@@ -14,7 +14,7 @@ import com.example.steven.quesorbetosa.Utilidades.Utilidades;
 
 public class ConsultarProductos extends AppCompatActivity {
 
-    Button BTN_Consultar_Productos;
+    Button BTN_Consultar_Productos,BTN_Actualizar_Clientes_Productos,BTN_Eliminar_Productos;
     EditText campoId,campoNombre,campoPrecioVenta;
 
     ConexionSqliteHelper conn;
@@ -37,6 +37,27 @@ public class ConsultarProductos extends AppCompatActivity {
                 consultarSql();
             }
         });
+
+        /*******************************NUEVO CODIGO ACTUALIZAR USURIO*******************************************/
+        BTN_Actualizar_Clientes_Productos =(Button) findViewById(R.id.BTN_Actualizar_Clientes_Productos);
+        BTN_Actualizar_Clientes_Productos.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                actualizarProducto();
+            }
+        });
+
+        /*******************************NUEVO CODIGO ACTUALIZAR USURIO*******************************************/
+        BTN_Eliminar_Productos =(Button) findViewById(R.id.BTN_Eliminar_Productos);
+        BTN_Eliminar_Productos.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                eliminarProducto();
+            }
+        });
+
     }
 
     private void eliminarProducto() {
