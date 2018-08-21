@@ -30,6 +30,7 @@ public class RegistroProductos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarProductos();
+                limpiar();
             }
         });
     }
@@ -48,5 +49,9 @@ public class RegistroProductos extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Id Producto: "+idResultante,Toast.LENGTH_SHORT).show();
 
         db.close();
+    }
+    private void limpiar() {
+        campoNombreProducto.setText("");
+        campoPrecioVenta.setText("");
     }
 }

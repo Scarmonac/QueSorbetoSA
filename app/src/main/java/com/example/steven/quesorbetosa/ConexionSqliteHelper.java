@@ -28,11 +28,12 @@ public class ConexionSqliteHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public void InsertarRegistros(String nombre, int telefono  ){
+    public void InsertarRegistros(String nombre, int telefono, String pais   ){
 
         ContentValues valores= new ContentValues();
         valores.put("Nombre",nombre );
         valores.put("Telefono", telefono);
+        valores.put("Pais", pais);
 
         this.getWritableDatabase().insert("Clientes", null,valores);
     }

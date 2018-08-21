@@ -14,8 +14,6 @@ import com.example.steven.quesorbetosa.Utilidades.Utilidades;
 public class ConsultarClientes extends AppCompatActivity {
 
     Button BTN_Consultar_Clientes;
-    Button BTN_Actualizar_Clientes;
-    Button BTN_Eliminar_Clientes;
     EditText campoId,campoNombre,campoTelefono;
 
     ConexionSqliteHelper conn;
@@ -39,30 +37,19 @@ public class ConsultarClientes extends AppCompatActivity {
                 consultarSql();
             }
         });
-
-
-        /*******************************NUEVO CODIGO ACTUALIZAR USURIO*******************************************/
-
-        BTN_Actualizar_Clientes =(Button) findViewById(R.id.BTN_Actualizar_Clientes);
-        BTN_Actualizar_Clientes.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                actualizarUsuario();
-            }
-        });
-
-        /*******************************NUEVO CODIGO ELIMINAR USURIO*******************************************/
-
-        BTN_Eliminar_Clientes =(Button) findViewById(R.id.BTN_Eliminar_Clientes);
-        BTN_Eliminar_Clientes.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                eliminarUsuario();
-            }
-        });
     }
+    /*public void onClick(View view) {
+
+        switch (view.getId()){
+            case R.id.BTN_Consultar_Clientes: consultarSql();
+                break;
+            case R.id.BTN_Actualizar_Clientes: actualizarUsuario();
+                break;
+            case R.id.BTN_Eliminar_Clientes: eliminarUsuario();
+                break;
+        }
+
+    }*/
 
     private void eliminarUsuario() {
         SQLiteDatabase db=conn.getWritableDatabase();
@@ -92,17 +79,17 @@ public class ConsultarClientes extends AppCompatActivity {
         SQLiteDatabase db=conn.getReadableDatabase();
         String[] parametros={campoId.getText().toString()};
         try {
-           String sql="SELECT "+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_TELEFONO+
+            String sql="SELECT "+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_TELEFONO+
                     " FROM "+Utilidades.TABLA_CLIENTE+" WHERE "+Utilidades.CAMPO_ID+"=" + parametros[0];
 
             Cursor cursor=db.rawQuery(sql ,null);
 
-           if (cursor.moveToNext()){
-               campoNombre.setText(cursor.getString(0));
-               campoTelefono.setText(cursor.getString(1));
-           } else {
-               Toast.makeText(getApplicationContext(), "El cliente no existe", Toast.LENGTH_LONG).show();
-           }
+            if (cursor.moveToNext()){
+                campoNombre.setText(cursor.getString(0));
+                campoTelefono.setText(cursor.getString(1));
+            } else {
+                Toast.makeText(getApplicationContext(), "El cliente no existe", Toast.LENGTH_LONG).show();
+            }
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
             limpiar();
