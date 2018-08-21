@@ -23,7 +23,7 @@ public class ConsultarClientes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consultar_clientes);
 
-        conn=new ConexionSqliteHelper(getApplicationContext(),"BDQUESORBETO",null,4);
+        conn=new ConexionSqliteHelper(getApplicationContext(),"BDQUESORBETO",null,5);
 
         campoId= (EditText) findViewById(R.id.TXTidUsuario);
         campoNombre= (EditText) findViewById(R.id.TXTnombreUsuario);

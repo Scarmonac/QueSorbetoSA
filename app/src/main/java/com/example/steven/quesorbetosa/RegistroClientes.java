@@ -65,7 +65,7 @@ public class RegistroClientes extends AppCompatActivity {
     }
 
     private void registrarUsuarios() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,4);
+        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 

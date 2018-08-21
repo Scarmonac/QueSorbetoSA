@@ -35,7 +35,7 @@ public class RegistroProductos extends AppCompatActivity {
         });
     }
     private void registrarProductos() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,4);
+        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 

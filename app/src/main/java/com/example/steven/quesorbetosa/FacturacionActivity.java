@@ -25,7 +25,7 @@ public class FacturacionActivity extends AppCompatActivity {
     Button BTN_Consultar_ClientesFacturacion;
     Button BTN_AgregarProductos_Facturacion;
     Button BTN_Imprimir_Factura;
-    EditText campoIdFacturacion,campoNombreFacturacion,campoNombreCliente,campoNombreProducto,campoCantidadProducto,campoPrecioVenta;
+    EditText campoIdFacturacion,campoNombreFacturacion,campoNombreCliente,campoNombreProducto,campoCantidadProducto;
     Spinner spinner_Productos;
 
     ArrayList<String> listaProductos;
@@ -43,7 +43,7 @@ public class FacturacionActivity extends AppCompatActivity {
         campoIdFacturacion= (EditText) findViewById(R.id.TXTidUsuarioFacturacion);
         campoNombreFacturacion= (EditText) findViewById(R.id.TXTnombreUsuarioFacturacion);
         spinner_Productos= (Spinner) findViewById(R.id.spinner_Productos);
-
+        campoCantidadProducto=(EditText) findViewById(R.id.TXTcantidadProducto);
             consultarListaProductos();
 
             ArrayAdapter<CharSequence> adaptador=new ArrayAdapter
@@ -157,8 +157,7 @@ public class FacturacionActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_NOMBRE,campoNombreCliente.getText().toString());
         values.put(Utilidades.CAMPO_NOMBRE_PRODUCTO_FACTURACION,campoNombreProducto.getText().toString());
         values.put(Utilidades.CAMPO_CANTIDAD_PRODUCTO,campoCantidadProducto.getText().toString());
-        values.put(Utilidades.CAMPO_PRECIO_VENTA,campoPrecioVenta.getText().toString());
-
+        
 
         long idResultante=db.insert(Utilidades.TABLA_FACTURACION,Utilidades.CAMPO_NOMBRE,values);
 
