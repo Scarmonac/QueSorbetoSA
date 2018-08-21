@@ -2,13 +2,10 @@ package com.example.steven.quesorbetosa;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.steven.quesorbetosa.Utilidades.Utilidades;
-import com.example.steven.quesorbetosa.entidades.Cliente;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,7 +21,7 @@ import java.util.Locale;
 public class RegistroClientes extends AppCompatActivity {
 
     Button BTN_RegistrarCliente, BTN_Obtener_Lista_Paises;
-    EditText campoNombre,campoTelefono,campoPaisCliente;
+    EditText campoNombre,campoTelefono;
     Spinner spinner_Paises;
 
     @SuppressLint("WrongViewCast")
@@ -35,8 +31,12 @@ public class RegistroClientes extends AppCompatActivity {
         setContentView(R.layout.activity_registro_clientes);
 
         spinner_Paises=(Spinner) findViewById(R.id.spinner_Paises) ;
+        BTN_Obtener_Lista_Paises=(Button) findViewById(R.id.button);
+
         campoNombre= (EditText) findViewById(R.id.TXT_Nombre);
         campoTelefono= (EditText) findViewById(R.id.TXT_Telefono);
+
+
 
 
         BTN_RegistrarCliente=(Button) findViewById(R.id.BTN_RegistrarCliente);
@@ -45,8 +45,11 @@ public class RegistroClientes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registrarUsuarios();
+                limpiar();
             }
         });
+
+
 
         /*****************************************************/
 
@@ -59,7 +62,6 @@ public class RegistroClientes extends AppCompatActivity {
                 limpiar();
             }
         });
-
     }
 
     private void registrarUsuarios() {
@@ -71,7 +73,6 @@ public class RegistroClientes extends AppCompatActivity {
 
         values.put(Utilidades.CAMPO_NOMBRE,campoNombre.getText().toString());
         values.put(Utilidades.CAMPO_TELEFONO,campoTelefono.getText().toString());
-        values.put(Utilidades.CAMPO_PAIS_CLIENTE,campoPaisCliente.getText().toString());
 
 
         Long idResultante=db.insert(Utilidades.TABLA_CLIENTE,Utilidades.CAMPO_NOMBRE,values);

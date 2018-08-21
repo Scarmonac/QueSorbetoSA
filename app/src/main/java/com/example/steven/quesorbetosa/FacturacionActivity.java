@@ -1,5 +1,7 @@
 package com.example.steven.quesorbetosa;
 
+import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +24,8 @@ public class FacturacionActivity extends AppCompatActivity {
 
     Button BTN_Consultar_ClientesFacturacion;
     Button BTN_AgregarProductos_Facturacion;
-    EditText campoIdFacturacion,campoNombreFacturacion;
+    Button BTN_Imprimir_Factura;
+    EditText campoIdFacturacion,campoNombreFacturacion,campoNombreCliente,campoNombreProducto,campoCantidadProducto,campoPrecioVenta;
     Spinner spinner_Productos;
 
     ArrayList<String> listaProductos;
@@ -66,6 +69,29 @@ public class FacturacionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 consultarSql();
+            }
+        });
+
+        BTN_AgregarProductos_Facturacion=(Button) findViewById(R.id.BTN_AgregarProductos_Facturacion);
+        BTN_AgregarProductos_Facturacion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+               registrarFactura();
+                limpiar();
+            }
+        });
+
+
+        BTN_Imprimir_Factura=(Button) findViewById(R.id.BTN_Imprimir_Factura);
+        BTN_Imprimir_Factura.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent elIntent= new Intent(getApplicationContext(),ImprimirFactura.class);
+                startActivity(elIntent);
+                limpiar();
             }
         });
 
@@ -119,6 +145,26 @@ public class FacturacionActivity extends AppCompatActivity {
 
         }
         obtenerLista();
+    }
+
+    private void registrarFactura() {
+        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,4);
+
+        SQLiteDatabase db=conn.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+
+        values.put(Utilidades.CAMPO_NOMBRE,campoNombreCliente.getText().toString());
+        values.put(Utilidades.CAMPO_NOMBRE_PRODUCTO_FACTURACION,campoNombreProducto.getText().toString());
+        values.put(Utilidades.CAMPO_CANTIDAD_PRODUCTO,campoCantidadProducto.getText().toString());
+        values.put(Utilidades.CAMPO_PRECIO_VENTA,campoPrecioVenta.getText().toString());
+
+
+        long idResultante=db.insert(Utilidades.TABLA_FACTURACION,Utilidades.CAMPO_NOMBRE,values);
+
+        Toast.makeText(getApplicationContext(),"Id Producto: "+idResultante,Toast.LENGTH_SHORT).show();
+
+        db.close();
     }
 
     private void obtenerLista() {

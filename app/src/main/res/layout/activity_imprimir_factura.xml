@@ -4,76 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacturacionActivity">
+    tools:context=".ImprimirFactura">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="425dp">
+        tools:layout_editor_absoluteY="325dp">
 
         <TextView
             android:id="@+id/txtFacturacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Facturacion"
+            android:text="Factura"
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/TXTidUsuarioFacturacion"
+            android:id="@+id/TXT_Id_Factura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Ingrese Id del Cliente"
+            android:hint="Id Factura"
             android:inputType="textPersonName" />
-
-        <Button
-            android:id="@+id/BTN_Consultar_ClientesFacturacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Consultar" />
 
         <EditText
-            android:id="@+id/TXTnombreUsuarioFacturacion"
+            android:id="@+id/TXT_Nombre_Cliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="0,1,2,3,4,5,6,7,8,9,-"
             android:ems="10"
-            android:hint="Nombre Cliente"
+            android:focusable="false"
+            android:hint="Nombre del Cliente"
             android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/txtFacturacionProductos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Productos"
-            android:textSize="20sp" />
-
-        <Spinner
-            android:id="@+id/spinner_Productos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/TXTcantidadProducto"
+            android:id="@+id/TXTCantidadProductos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Cantidad"
+            android:focusable="false"
+            android:hint="Cantidad productos "
+
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/TXTPrecioProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Precio Producto"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/TXTtotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Total a pagar"
             android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/BTN_AgregarProductos_Facturacion"
+            android:id="@+id/BTN_Consultar_Facturas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Agregar" />
-
-        <Button
-            android:id="@+id/BTN_Imprimir_Factura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imprimir Factura" />
-
+            android:text="Mostrar detalles factura" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

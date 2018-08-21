@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.steven.quesorbetosa">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -26,8 +27,8 @@
         <activity android:name=".ConsultarClientes" />
         <activity android:name=".RegistroProductos" />
         <activity android:name=".ConsultarProductos" />
-        <activity android:name=".ActualizarProductos"></activity>
-
+        <activity android:name=".ActualizarProductos" />
+        <activity android:name=".ImprimirFactura"></activity>
     </application>
 
 </manifest>
