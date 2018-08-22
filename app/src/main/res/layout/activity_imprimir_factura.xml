@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Id Factura"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890" />
 
         <EditText
             android:id="@+id/TXT_Nombre_Cliente"
@@ -43,9 +44,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="false"
-            android:hint="Cantidad productos "
-
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890"
+            android:hint="Cantidad productos " />
 
         <EditText
             android:id="@+id/TXTPrecioProducto"
@@ -54,7 +55,8 @@
             android:ems="10"
             android:focusable="false"
             android:hint="Precio Producto"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890"/>
 
         <EditText
             android:id="@+id/TXTtotal"

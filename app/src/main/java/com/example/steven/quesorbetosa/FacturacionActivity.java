@@ -128,6 +128,8 @@ public class FacturacionActivity extends AppCompatActivity {
     }
 
     private void consultarListaProductos() {
+        try {
+
         SQLiteDatabase db=conn.getReadableDatabase();
 
         Producto persona=null;
@@ -149,10 +151,19 @@ public class FacturacionActivity extends AppCompatActivity {
 
         }
         obtenerLista();
+
+    }catch (Exception e){
+        Toast.makeText(getApplicationContext(),"Error: No se encontró la factura deseada " ,Toast.LENGTH_LONG).show();
+        limpiar();
     }
+}
 
     private void registrarFactura() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
+        try {
+
+
+
+            ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
 
         SQLiteDatabase db=conn.getWritableDatabase();
@@ -169,6 +180,10 @@ public class FacturacionActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Id Producto: "+idResultante,Toast.LENGTH_SHORT).show();
 
         db.close();
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
+            limpiar();
+        }
     }
 
     private void obtenerLista() {

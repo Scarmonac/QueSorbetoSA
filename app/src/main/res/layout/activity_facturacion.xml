@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese Id del Cliente"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890" />
 
         <Button
             android:id="@+id/BTN_Consultar_ClientesFacturacion"
@@ -41,6 +42,7 @@
             android:digits="0,1,2,3,4,5,6,7,8,9,-"
             android:ems="10"
             android:hint="Nombre Cliente"
+            android:focusable="false"
             android:inputType="textPersonName" />
 
         <TextView
@@ -61,7 +63,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Cantidad"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890" />
 
         <Button
             android:id="@+id/BTN_AgregarProductos_Facturacion"

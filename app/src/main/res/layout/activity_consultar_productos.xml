@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese id del producto"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890"/>
 
         <EditText
             android:id="@+id/TXTnombreProducto"
@@ -43,7 +44,8 @@
             android:editable="false"
             android:ems="10"
             android:hint="Precio venta"
-            android:inputType="textPersonName" />
+            android:inputType="phone"
+            android:digits="1234567890" />
 
         <Button
             android:id="@+id/BTN_Consultar_Productos"

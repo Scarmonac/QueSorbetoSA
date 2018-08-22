@@ -72,6 +72,7 @@ public class ConsultarProductos extends AppCompatActivity {
     }
 
     private void actualizarProducto() {
+        try {
         SQLiteDatabase db=conn.getWritableDatabase();
         String[] parametros={campoId.getText().toString()};
         ContentValues values=new ContentValues();
@@ -82,6 +83,10 @@ public class ConsultarProductos extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Ya se actualizó el Producto",Toast.LENGTH_LONG).show();
         db.close();
 
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
+            limpiar();
+        }
     }
 
     private void consultarSql() {
@@ -103,23 +108,6 @@ public class ConsultarProductos extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
             limpiar();
         }
-    }
-    private void consultar() {
-        SQLiteDatabase db=conn.getReadableDatabase();
-        String[] parametros={campoId.getText().toString()};
-        String[] campos={Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_TELEFONO};
-
-        try {
-            Cursor cursor =db.query(Utilidades.TABLA_CLIENTE,campos,Utilidades.CAMPO_ID+"=?",parametros,null,null,null);
-            cursor.moveToFirst();
-            campoNombre.setText(cursor.getString(0));
-            campoPrecioVenta.setText(cursor.getString(1));
-            cursor.close();
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"El Cliente no existe",Toast.LENGTH_LONG).show();
-            limpiar();
-        }
-
     }
 
     private void limpiar() {

@@ -65,7 +65,10 @@ public class RegistroClientes extends AppCompatActivity {
     }
 
     private void registrarUsuarios() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
+
+        try {
+
+            ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 
@@ -80,6 +83,11 @@ public class RegistroClientes extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Id Cliente: "+idResultante,Toast.LENGTH_SHORT).show();
 
         db.close();
+
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
+            limpiar();
+        }
     }
 
 
@@ -90,7 +98,7 @@ public class RegistroClientes extends AppCompatActivity {
     }
 
     public void GetListaPaises(){
-
+        try {
         Locale[] locale = Locale.getAvailableLocales();
         ArrayList<String> paises = new ArrayList<>();
         String Pais;
@@ -107,6 +115,10 @@ public class RegistroClientes extends AppCompatActivity {
         spinner_Paises.setAdapter(adapter);
 
 
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
+            limpiar();
+        }
     }
 }
 

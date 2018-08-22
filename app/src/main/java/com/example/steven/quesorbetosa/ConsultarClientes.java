@@ -38,18 +38,7 @@ public class ConsultarClientes extends AppCompatActivity {
             }
         });
     }
-    /*public void onClick(View view) {
 
-        switch (view.getId()){
-            case R.id.BTN_Consultar_Clientes: consultarSql();
-                break;
-            case R.id.BTN_Actualizar_Clientes: actualizarUsuario();
-                break;
-            case R.id.BTN_Eliminar_Clientes: eliminarUsuario();
-                break;
-        }
-
-    }*/
 
     private void eliminarUsuario() {
         SQLiteDatabase db=conn.getWritableDatabase();

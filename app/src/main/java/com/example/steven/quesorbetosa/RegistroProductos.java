@@ -35,7 +35,9 @@ public class RegistroProductos extends AppCompatActivity {
         });
     }
     private void registrarProductos() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
+        try {
+
+            ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 
@@ -49,6 +51,10 @@ public class RegistroProductos extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Id Producto: "+idResultante,Toast.LENGTH_SHORT).show();
 
         db.close();
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error: " ,Toast.LENGTH_LONG).show();
+            limpiar();
+        }
     }
     private void limpiar() {
         campoNombreProducto.setText("");
