@@ -20,7 +20,9 @@ public class Producto {
 
     }
 
-
+    public Integer getId() {
+        return idd;
+    }
 
     public void setId(Integer id) {
         this.idd = id;
