@@ -48,7 +48,7 @@ public class ConsultarProductos extends AppCompatActivity {
             }
         });
 
-        /*******************************NUEVO CODIGO ACTUALIZAR USURIO*******************************************/
+        /*******************************NUEVO CODIGO ACTUALIZAR PRODUCTO*******************************************/
         BTN_Eliminar_Productos =(Button) findViewById(R.id.BTN_Eliminar_Productos);
         BTN_Eliminar_Productos.setOnClickListener(new View.OnClickListener() {
 

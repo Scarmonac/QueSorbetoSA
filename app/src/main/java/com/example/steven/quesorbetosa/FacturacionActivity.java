@@ -45,6 +45,8 @@ public class FacturacionActivity extends AppCompatActivity {
         campoNombreFacturacion= (EditText) findViewById(R.id.TXTnombreUsuarioFacturacion);
         spinner_Productos= (Spinner) findViewById(R.id.spinner_Productos);
         campoCantidadProducto=(EditText) findViewById(R.id.TXTcantidadProducto);
+
+
         consultarListaProductos();
 
         ArrayAdapter<CharSequence> adaptador=new ArrayAdapter
@@ -80,6 +82,7 @@ public class FacturacionActivity extends AppCompatActivity {
             public void onClick(View view) {
               registrarFactura();
                 limpiar();
+
             }
         });
 
@@ -149,18 +152,19 @@ public class FacturacionActivity extends AppCompatActivity {
     }
 
     private void registrarFactura() {
+        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,5);
 
 
         SQLiteDatabase db=conn.getWritableDatabase();
 
         ContentValues values=new ContentValues();
 
-        values.put(Utilidades.CAMPO_NOMBRE,campoNombreCliente.getText().toString());
-        values.put(Utilidades.CAMPO_NOMBRE_PRODUCTO_FACTURACION,campoNombreProducto.getText().toString());
+         values.put(Utilidades.CAMPO_NOMBRE_CLIENTE,campoNombreFacturacion.getText().toString());
+        values.put(Utilidades.CAMPO_NOMBRE_PRODUCTO_FACTURACION,spinner_Productos.getSelectedItem().toString());
         values.put(Utilidades.CAMPO_CANTIDAD_PRODUCTO,campoCantidadProducto.getText().toString());
 
 
-        long idResultante=db.insert(Utilidades.TABLA_FACTURACION,Utilidades.CAMPO_NOMBRE,values);
+        long idResultante=db.insert(Utilidades.TABLA_FACTURACION,Utilidades.CAMPO_NOMBRE_CLIENTE,values);
 
         Toast.makeText(getApplicationContext(),"Id Producto: "+idResultante,Toast.LENGTH_SHORT).show();
 

@@ -81,6 +81,9 @@ public class RegistroClientes extends AppCompatActivity {
 
         db.close();
     }
+
+
+
     private void limpiar() {
         campoNombre.setText("");
         campoTelefono.setText("");
