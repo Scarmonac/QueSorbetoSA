@@ -25,7 +25,7 @@ public class FacturacionActivity extends AppCompatActivity {
     Button BTN_Consultar_ClientesFacturacion;
     Button BTN_AgregarProductos_Facturacion;
     Button BTN_Imprimir_Factura;
-    EditText campoIdFacturacion,campoNombreFacturacion,campoNombreCliente,campoNombreProducto,campoCantidadProducto;
+    EditText campoIdFacturacion, campoNombreFacturacion, campoNombreCliente, campoNombreProducto, campoCantidadProducto;
     Spinner spinner_Productos;
 
     ArrayList<String> listaProductos;
@@ -38,16 +38,17 @@ public class FacturacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facturacion);
 
-        conn=new ConexionSqliteHelper(getApplicationContext(),"BDQUESORBETO",null,4);
+
+        conn=new ConexionSqliteHelper(getApplicationContext(),"BDQUESORBETO",null,5);
 
         campoIdFacturacion= (EditText) findViewById(R.id.TXTidUsuarioFacturacion);
         campoNombreFacturacion= (EditText) findViewById(R.id.TXTnombreUsuarioFacturacion);
         spinner_Productos= (Spinner) findViewById(R.id.spinner_Productos);
         campoCantidadProducto=(EditText) findViewById(R.id.TXTcantidadProducto);
-            consultarListaProductos();
+        consultarListaProductos();
 
-            ArrayAdapter<CharSequence> adaptador=new ArrayAdapter
-                    (this,android.R.layout.simple_spinner_item,listaProductos);
+        ArrayAdapter<CharSequence> adaptador=new ArrayAdapter
+                (this,android.R.layout.simple_spinner_item,listaProductos);
 
         spinner_Productos.setAdapter(adaptador);
 
@@ -72,12 +73,12 @@ public class FacturacionActivity extends AppCompatActivity {
             }
         });
 
-        BTN_AgregarProductos_Facturacion=(Button) findViewById(R.id.BTN_AgregarProductos_Facturacion);
+       BTN_AgregarProductos_Facturacion=(Button) findViewById(R.id.BTN_AgregarProductos_Facturacion);
         BTN_AgregarProductos_Facturacion.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-               registrarFactura();
+              registrarFactura();
                 limpiar();
             }
         });
@@ -118,10 +119,10 @@ public class FacturacionActivity extends AppCompatActivity {
             limpiar();
         }
     }
-        private void limpiar() {
-            campoNombreFacturacion.setText("");
+    private void limpiar() {
+        campoNombreFacturacion.setText("");
 
-        }
+    }
 
     private void consultarListaProductos() {
         SQLiteDatabase db=conn.getReadableDatabase();
@@ -148,7 +149,7 @@ public class FacturacionActivity extends AppCompatActivity {
     }
 
     private void registrarFactura() {
-        ConexionSqliteHelper conn=new ConexionSqliteHelper(this,"BDQUESORBETO",null,4);
+
 
         SQLiteDatabase db=conn.getWritableDatabase();
 
@@ -157,7 +158,7 @@ public class FacturacionActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_NOMBRE,campoNombreCliente.getText().toString());
         values.put(Utilidades.CAMPO_NOMBRE_PRODUCTO_FACTURACION,campoNombreProducto.getText().toString());
         values.put(Utilidades.CAMPO_CANTIDAD_PRODUCTO,campoCantidadProducto.getText().toString());
-        
+
 
         long idResultante=db.insert(Utilidades.TABLA_FACTURACION,Utilidades.CAMPO_NOMBRE,values);
 
