@@ -22,22 +22,24 @@
             android:visibility="visible" />
 
         <EditText
-            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:id="@+id/TXT_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textEmailAddress"
-            android:hint="Email" />
+            android:text="admin" />
 
         <EditText
-            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:id="@+id/TXT_Contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:ems="10"
+            android:hint="Contraseña"
             android:inputType="textPassword"
-            android:hint="Contraseña" />
+            android:text="admin" />
 
         <Button
             android:id="@+id/BTN_Login"
